@@ -1,0 +1,28 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,7 +16,7 @@
+ # along with KLFitter. If not, see <http://www.gnu.org/licenses/>.
+
+ # Set the minimum CMake version required to build the project.
+-cmake_minimum_required( VERSION 3.10 )
++cmake_minimum_required(VERSION 3.10...4.2)
+
+ # Set the project's name and version.
+ project( KLFitter VERSION 1.5.0 )
+@@ -26,7 +26,6 @@
+
+ # Set up the "C++ version" to use.
+ set( CMAKE_CXX_STANDARD_REQUIRED ON )
+-set( CMAKE_CXX_STANDARD 14 )
+ set( CMAKE_CXX_EXTENSIONS FALSE )
+
+ # Default to building shared libraries.
+@@ -163,7 +162,7 @@
+ # Build the library.
+ add_library( KLFitter ${lib_headers} ${lib_sources} )
+ add_library( KLFitter::KLFitter ALIAS KLFitter )
+-target_compile_features( KLFitter PUBLIC cxx_std_14 )
++target_compile_features( KLFitter PUBLIC cxx_std_17 )
+ target_include_directories( KLFitter
+    PUBLIC ${ROOT_INCLUDE_DIRS} ${BAT_INCLUDE_DIR}
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include> )

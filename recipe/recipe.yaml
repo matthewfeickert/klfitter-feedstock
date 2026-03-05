@@ -9,10 +9,7 @@ source:
   url: https://github.com/KLFitter/KLFitter/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 3eaa9d8dd591f8a3787ff0db284a4344a5ee0a8f2eb1014dfe8b9a67323f5f83
   patches:
-    - 1.4.0-cmake-minimum.patch
-    - 1.4.0-cmake-flags.patch
-    - 1.4.0-cmake-config.patch
-    - configurable-static-library-build.patch
+    - cxx-std-minimum.patch
 
 build:
   number: 0
@@ -76,8 +73,10 @@ tests:
         - KLFitter/Permutations.h
         - KLFitter/PhysicsConstants.h
       files:
-        - lib/cmake/KLFitter/KLFitterConfig-release.cmake
         - lib/cmake/KLFitter/KLFitterConfig.cmake
+        - lib/cmake/KLFitter/KLFitterConfigVersion.cmake
+        - lib/cmake/KLFitter/KLFitterTargets-release.cmake
+        - lib/cmake/KLFitter/KLFitterTargets.cmake
         - share/KLFitter/transferfunctions/snowmass/par_energy_electrons_eta1.txt
         - share/KLFitter/transferfunctions/snowmass/par_energy_electrons_eta2.txt
         - share/KLFitter/transferfunctions/snowmass/par_energy_jets_eta1.txt
