@@ -1,5 +1,5 @@
 context:
-  version: "1.4.0"
+  version: "1.5.0"
 
 package:
   name: klfitter
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/KLFitter/KLFitter/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 660fea5c195cd872d0a4cdfdc4c7a566612882a3afefb58a37ffde99d711a75a
+  sha256: 3eaa9d8dd591f8a3787ff0db284a4344a5ee0a8f2eb1014dfe8b9a67323f5f83
   patches:
     - 1.4.0-cmake-minimum.patch
     - 1.4.0-cmake-flags.patch
@@ -15,7 +15,7 @@ source:
     - configurable-static-library-build.patch
 
 build:
-  number: 1
+  number: 0
   skip:
     - win
   script:
